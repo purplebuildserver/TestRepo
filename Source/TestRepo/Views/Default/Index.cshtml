@@ -1,0 +1,20 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>WOT</h2>
+@using(Html.BeginForm("DoThing", "Default", FormMethod.Post))
+{
+    <p>WHAT'S YOUR NAME? <input id="name" name="name" type="text" /></p>
+    <input id="submitButton" title="Go!" type="submit"/>
+}
+<p>
+    @if (ViewData.ContainsKey("returnedString"))
+    {
+        <h1>@ViewData["returnedString"]</h1>
+    }
+
+</p>
